@@ -1,0 +1,13 @@
+
+a = -3;
+
+n = (a - 10):(a + 10);
+
+unit_step = n >= a;
+
+figure;
+stem(n, unit_step, 'filled');
+title(['Unit Step Sequence u(n - ', num2str(a), ')']);
+xlabel('n');
+ylabel('Amplitude');
+grid on;
