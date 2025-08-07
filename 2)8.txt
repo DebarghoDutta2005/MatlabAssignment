@@ -1,0 +1,20 @@
+
+t = 0:0.1:10;
+y1 = exp(-2 * t);      
+y2 = (1.5) .^ t;       
+y3 = y1 .* y2;          
+
+figure;
+
+plot(t, y1, 'r', 'LineWidth', 1.5); hold on; 
+plot(t, y2, 'g', 'LineWidth', 1.5);        
+plot(t, y3, 'b', 'LineWidth', 1.5);     
+
+title('Plot of y1 = e^{-2t}, y2 = (1.5)^t and y3 = y1 * y2');
+xlabel('Time t');
+ylabel('Amplitude');
+legend('y_1 = e^{-2t}', 'y_2 = (1.5)^t', 'y_3 = y_1 * y_2');
+
+ylim([-1 2]);
+
+grid on;
