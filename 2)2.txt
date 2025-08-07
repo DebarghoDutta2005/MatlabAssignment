@@ -1,0 +1,43 @@
+
+clear;
+close all;
+clc;
+n1 = -9:10; 
+u1 = zeros(1, length(n1));
+
+u1(n1 >= 0) = 1;
+
+figure('Name', 'Basic Unit Step Sequence'); 
+stem(n1, u1, 'b', 'filled', 'LineWidth', 1.5); 
+title('Unit Step Sequence u(n) of Length 20');
+xlabel('Time index (n)');
+ylabel('Amplitude');
+grid on; 
+axis([min(n1)-1, max(n1)+1, -0.2, 1.2]);
+
+n2 = -10:10;
+
+u_advanced = zeros(1, length(n2));
+u_advanced(n2 >= -6) = 1;
+
+u_delayed = zeros(1, length(n2));
+u_delayed(n2 >= 5) = 1; 
+
+figure('Name', 'Shifted Unit Step Sequences');
+
+
+subplot(2, 1, 1);
+stem(n2, u_advanced, 'r', 'filled', 'LineWidth', 1.5);
+title('Advanced Sequence: u(n + 6)');
+xlabel('Time index (n)');
+ylabel('Amplitude');
+grid on;
+axis([min(n2)-1, max(n2)+1, -0.2, 1.2]);
+
+subplot(2, 1, 2); 
+stem(n2, u_delayed, 'g', 'filled', 'LineWidth', 1.5);
+title('Delayed Sequence: u(n - 5)');
+xlabel('Time index (n)');
+ylabel('Amplitude');
+grid on;
+axis([min(n2)-1, max(n2)+1, -0.2, 1.2]);
