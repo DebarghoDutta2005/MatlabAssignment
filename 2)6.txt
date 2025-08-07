@@ -1,0 +1,28 @@
+
+length_seq = 20;
+
+n = 0:length_seq-1; 
+
+a_impulse = 5; 
+a_step = 3;    
+
+impulse = (n == a_impulse); 
+
+step = (n >= a_step); 
+
+figure;
+subplot(2, 1, 1);
+stem(n, impulse, 'filled');
+title(['Unit Impulse Sequence \delta(n - ', num2str(a_impulse), ')']);
+xlabel('n');
+ylabel('Amplitude');
+ylim([-0.5 1.5]);
+grid on;
+
+subplot(2, 1, 2);
+stem(n, step, 'filled');
+title(['Unit Step Sequence u(n - ', num2str(a_step), ')']);
+xlabel('n');
+ylabel('Amplitude');
+ylim([-0.5 1.5]);
+grid on;
