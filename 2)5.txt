@@ -1,0 +1,11 @@
+
+a = 4;
+n = (a - 10):(a + 10);   
+delta = double(n == a);   
+
+stem(n, delta, 'filled');
+title('Unit Impulse Sequence \delta(n - 4)');
+xlabel('n');
+ylabel('\delta[n - 4]');
+ylim([0 1.2]);
+grid on;
