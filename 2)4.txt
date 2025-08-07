@@ -1,0 +1,24 @@
+
+N = 20;
+
+
+n = -10:9;  
+delta_n_plus_4 = double(n == -4);  
+delta_n_minus_3 = double(n == 3);  
+figure;
+
+subplot(2,1,1);
+stem(n, delta_n_plus_4, 'filled');
+title('Unit Impulse Sequence \delta(n + 4)');
+xlabel('n');
+ylabel('\delta[n + 4]');
+ylim([0 1.2]);
+grid on;
+
+subplot(2,1,2);
+stem(n, delta_n_minus_3, 'filled');
+title('Unit Impulse Sequence \delta(n - 3)');
+xlabel('n');
+ylabel('\delta[n - 3]');
+ylim([0 1.2]);
+grid on;
