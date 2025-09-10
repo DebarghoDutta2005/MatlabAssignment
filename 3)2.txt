@@ -1,0 +1,46 @@
+clc;
+clear;
+close all;
+
+%% ============================
+% Part 1: Discrete-Time Signal
+% =============================
+y1 = [1 4 3 -2 5];     
+n = 0:length(y1)-1;   
+
+
+y1_rev = fliplr(y1);
+n_rev = -fliplr(n);
+
+figure;
+subplot(2,1,1);
+stem(n, y1, 'b', 'filled');
+title('Original Discrete-Time Signal y1[n]');
+xlabel('n'); ylabel('Amplitude');
+
+subplot(2,1,2);
+stem(n_rev, y1_rev, 'r', 'filled');
+title('Time-Reversed Signal y1[-n]');
+xlabel('n'); ylabel('Amplitude');
+
+
+%% ============================
+% Part 2: Continuous-Time Signal
+% =============================
+f = 5;                    
+t = -1:0.001:1;            
+
+y2 = sin(2*pi*f*t);        
+y2_rev = sin(2*pi*f*(-t)); 
+
+
+figure;
+subplot(2,1,1);
+plot(t, y2, 'b');
+title('Original Continuous-Time Signal y2(t) = sin(2πft)');
+xlabel('t (s)'); ylabel('Amplitude');
+
+subplot(2,1,2);
+plot(t, y2_rev, 'r');
+title('Time-Reversed Signal y2(-t)');
+xlabel('t (s)'); ylabel('Amplitude');

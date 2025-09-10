@@ -1,0 +1,33 @@
+clc;
+clear;
+close all;
+
+%% Continuous-time signal
+t = -2:0.001:2;     
+f = 2;              
+x = sin(2*pi*f*t);    
+
+% Time scaling
+a1 = 2;   % compression (x(2t))
+a2 = 0.5; % expansion (x(0.5t))
+
+x_compress = sin(2*pi*f*(a1*t));   % compressed in time
+x_expand   = sin(2*pi*f*(a2*t));   % expanded in time
+
+
+figure;
+
+subplot(3,1,1);
+plot(t, x, 'b');
+title('Original Signal x(t) = sin(2πft)');
+xlabel('t (s)'); ylabel('Amplitude');
+
+subplot(3,1,2);
+plot(t, x_compress, 'r');
+title(['Compressed Signal x(' num2str(a1) 't), (a = ' num2str(a1) ')']);
+xlabel('t (s)'); ylabel('Amplitude');
+
+subplot(3,1,3);
+plot(t, x_expand, 'm');
+title(['Expanded Signal x(' num2str(a2) 't), (a = ' num2str(a2) ')']);
+xlabel('t (s)'); ylabel('Amplitude');

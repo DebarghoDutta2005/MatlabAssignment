@@ -1,0 +1,13 @@
+clc;
+clear;
+close all;
+
+
+t = 0:0.001:2*pi;       
+x = sin(t);             
+
+figure;
+plot(t, x, 'b', 'LineWidth', 1.5);
+grid on;
+title('Half-Wave Symmetry Signal');
+xlabel('t (rad)'); ylabel('Amplitude');
